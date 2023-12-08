@@ -243,3 +243,13 @@ input[type='checkbox']{
 
 }
 
+
+
+
+.notFoundContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+
+}
