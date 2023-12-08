@@ -11,7 +11,7 @@ function App() {
       <NavBar />
 
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/TaskApp" element={<Home />} />
         <Route path="/tasks/completed" element={<CompletedTasks />} />
         <Route path="*" element={<NotFound404 />} />
       </Routes>
