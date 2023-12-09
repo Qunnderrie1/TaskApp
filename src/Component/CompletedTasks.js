@@ -9,7 +9,7 @@ const CompletedTasks = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/tasks/completed")
+      .get("https://mytaskbackend-p042.onrender.com/tasks/completed")
       .then((res) => setCompletedTask(res.data))
       .catch((err) => console.log(err));
   }, [completedTask]);
@@ -52,7 +52,7 @@ const CompletedTasks = () => {
       <button
         onClick={async (e) => {
           const removeTask = await axios
-            .delete(`http://localhost:3001/tasks/${myTask}`)
+            .delete(`https://mytaskbackend-p042.onrender.com/tasks/${myTask}`)
             .then(() => console.log("Successfully"))
             .catch((err) => console.log(err));
         }}

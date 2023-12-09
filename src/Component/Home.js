@@ -37,7 +37,7 @@ const Home = () => {
   // Function for adding tasks
   const handleAddTask = async () => {
     if (task && taskTime && taskTime) {
-      const userTask = await axios.post("http://localhost:3001/tasks", {
+      const userTask = await axios.post("https://https://mytask-e7el.onrender.com:3001/TaskApp:3001/tasks", {
         task: task,
         time: taskTime,
         date: taskDate,
@@ -54,7 +54,7 @@ const Home = () => {
   // Getting all non-completed tasks
   useEffect(() => {
     axios
-      .get("http://localhost:3001/tasks")
+      .get("https://https://mytask-e7el.onrender.com:3001/TaskApp:3001/tasks")
       .then((res) => setUserTasks(res.data))
       .catch((err) => console.log(err));
   }, [userTasks]);
@@ -128,7 +128,7 @@ const Home = () => {
           <button
             onClick={() => {
               axios
-                .put("http://localhost:3001/tasks/v1/pending", { task: selectTask })
+                .put("https://https://mytask-e7el.onrender.com/TaskApp:3001/tasks/v1/pending", { task: selectTask })
                 .then(() => console.log("successfully"))
                 .catch((err) => console.log(err));
             }}
