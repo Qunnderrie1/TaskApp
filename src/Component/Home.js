@@ -128,7 +128,7 @@ const Home = () => {
           <button
             onClick={() => {
               axios
-                .put("https://mytaskbackend-p042.onrender.com//tasks/v1/pending", { task: selectTask })
+                .put("https://mytaskbackend-p042.onrender.com/tasks/v1/pending", { task: selectTask })
                 .then(() => console.log("successfully"))
                 .catch((err) => console.log(err));
             }}
