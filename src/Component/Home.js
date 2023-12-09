@@ -1,8 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate, Link } from "react-router-dom";
 import TaskCard from "./TaskCard";
+import api_url from './env'
 
 const Home = () => {
   const [task, setTask] = useState();
@@ -10,8 +10,6 @@ const Home = () => {
   const [taskDate, setTaskDate] = useState("");
   const [userTasks, setUserTasks] = useState([{}]);
   const [selectTask, setSelectedTask] = useState("");
-
-  console.log(task)
 
 
 
@@ -37,7 +35,7 @@ const Home = () => {
   // Function for adding tasks
   const handleAddTask = async () => {
     if (task && taskTime && taskTime) {
-      const userTask = await axios.post("https://mytaskbackend-p042.onrender.com/tasks", {
+      const userTask = await axios.post(`${api_url}/tasks`, {
         task: task,
         time: taskTime,
         date: taskDate,
@@ -53,8 +51,9 @@ const Home = () => {
 
   // Getting all non-completed tasks
   useEffect(() => {
+
     axios
-      .get("https://mytaskbackend-p042.onrender.com/tasks")
+      .get(`${api_url}/tasks`)
       .then((res) => setUserTasks(res.data))
       .catch((err) => console.log(err));
   }, [userTasks]);

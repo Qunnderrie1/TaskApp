@@ -1,6 +1,7 @@
 import React, { Children, useEffect, useState } from "react";
 import axios from "axios";
 import TaskCard from "./TaskCard";
+import api_url from './env'
 
 const CompletedTasks = () => {
   const [completedTask, setCompletedTask] = useState([{}]);
@@ -9,7 +10,7 @@ const CompletedTasks = () => {
 
   useEffect(() => {
     axios
-      .get("https://mytaskbackend-p042.onrender.com/tasks/completed")
+      .get(`${api_url}/tasks/completed`)
       .then((res) => setCompletedTask(res.data))
       .catch((err) => console.log(err));
   }, [completedTask]);
@@ -52,7 +53,7 @@ const CompletedTasks = () => {
       <button
         onClick={async (e) => {
           const removeTask = await axios
-            .delete(`https://mytaskbackend-p042.onrender.com/tasks/${myTask}`)
+            .delete(`${api_url}/tasks/${myTask}`)
             .then(() => console.log("Successfully"))
             .catch((err) => console.log(err));
         }}
