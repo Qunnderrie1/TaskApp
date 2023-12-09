@@ -2,7 +2,7 @@
   "name": "app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://glistening-marshmallow-1c6e05.netlify.app/",
+  "homepage": "https://qunnderrie1.github.io/TaskApp/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
