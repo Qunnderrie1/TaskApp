@@ -54,7 +54,7 @@ const Home = () => {
   // Getting all non-completed tasks
   useEffect(() => {
     axios
-      .get("http://172.56.66.44:3001/tasks")
+      .get("http://192.168.12.125:3001/tasks")
       .then((res) => setUserTasks(res.data))
       .catch((err) => console.log(err));
   }, [userTasks]);
@@ -128,7 +128,7 @@ const Home = () => {
           <button
             onClick={() => {
               axios
-                .put("http://172.56.66.44/tasks/v1/pending", { task: selectTask })
+                .put("http://192.168.12.125/tasks/v1/pending", { task: selectTask })
                 .then(() => console.log("successfully"))
                 .catch((err) => console.log(err));
             }}

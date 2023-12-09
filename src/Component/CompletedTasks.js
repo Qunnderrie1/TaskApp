@@ -9,7 +9,7 @@ const CompletedTasks = () => {
 
   useEffect(() => {
     axios
-      .get("http://172.56.66.44:3001/tasks/completed")
+      .get("http://192.168.12.125:3001/tasks/completed")
       .then((res) => setCompletedTask(res.data))
       .catch((err) => console.log(err));
   }, [completedTask]);
@@ -52,7 +52,7 @@ const CompletedTasks = () => {
       <button
         onClick={async (e) => {
           const removeTask = await axios
-            .delete(`http://172.56.66.44/tasks/${myTask}`)
+            .delete(`http://192.168.12.125/tasks/${myTask}`)
             .then(() => console.log("Successfully"))
             .catch((err) => console.log(err));
         }}
